@@ -8,7 +8,7 @@ form = cgi.FieldStorage()
 
 playersArr = []
 player_name = form.getvalue('player_name')
-playersArr = player_name.split(',')
+
 games = nflgame.games(2015, week=1)
 players = nflgame.combine(games)
 player_stats = players.name(player_name)
@@ -32,7 +32,7 @@ print """
 	</form>
 	
 	"""
-
+playersArr = player_name.split(',')
 def calcFant(player):
 	fpoints = 0
 	tdpoints = 0
